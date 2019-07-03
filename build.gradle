@@ -1,0 +1,27 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.6.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.kafka'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '12'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	//kafka dependencies 
+	compile group: 'org.apache.kafka', name: 'kafka-clients', version: '2.3.0'
+
+	//logger
+	testCompile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.26'
+
+
+}
